@@ -50,7 +50,7 @@ export const PROJECTS = [
     title: "BaniWorks - Local Freelancing Platform for Graphic designers and Content writers - Group project",
     image: project2,
     description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
+      "An application for local freelancers like graphic designers and content writers, with features such as signup, login, update profile, looking for a job, chat with clients, upload project proposal, send projct and payment.",
     technologies: ["HTML", "CSS", "Typescript","Prisma", "Supabase"],
   },
   {
