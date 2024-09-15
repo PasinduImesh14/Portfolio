@@ -40,18 +40,18 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "E-Commerce Website",
+    title: "Real-Time Chatting Website - Group project",
     image: project1,
     description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
+      "A fully functional Real-time chatting website with features like chat with other users, send images, audio & video call, hand signal identifier and text scanner.",
+    technologies: ["HTML", "CSS", "React", "Node.js", "firebase", "Django"],
   },
   {
-    title: "Task Management App",
+    title: "BaniWorks - Local Freelancing Platform for Graphic designers and Content writers - Group project",
     image: project2,
     description:
       "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "Angular", "Firebase"],
+    technologies: ["HTML", "CSS", "Typescript","Prisma", "Supabase"],
   },
   {
     title: "Portfolio Website",
@@ -65,12 +65,12 @@ export const PROJECTS = [
     image: project4,
     description:
       "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
+    technologies: ["HTML", "CSS", "Express", "mySQL"],
   },
 ];
 
 export const CONTACT = {
-  address: "767 Fifth Avenue, New York, NY 10153 ",
-  phoneNo: "+12 4555 666 00 ",
-  email: "me@example.com",
+  address: "44/31, Sri Sumangala Road(South), Kalutara North, Kalutara ",
+  phoneNo: "+94 766169957 / +94 756169953 ",
+  email: "pasinduimesh385@gmail.com",
 };
