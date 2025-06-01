@@ -3,12 +3,13 @@ import project2 from "../assets/projects/project-2.jpg";
 import project3 from "../assets/projects/project-3.jpg";
 import project4 from "../assets/projects/project-4.jpg";
 
-export const HERO_CONTENT = `I am a dedicated undergraduate student pursuing a degree in software engineering, with a strong foundation in full-stack web development. Over the course of my academic journey, I have gained practical experience with front-end technologies like React and Next.js, as well as back-end technologies such as Node.js, MySQL, and MongoDB. I am passionate about using my growing expertise to develop scalable applications that provide seamless user experiences and contribute to meaningful solutions in the IT industry.`;
+export const HERO_CONTENT = "I am a dedicated undergraduate student pursuing a degree in software engineering, with a strong foundation in full-stack web development. I am passionate about using my growing expertise to develop scalable applications that provide seamless user experiences and contribute to meaningful solutions in the IT industry.";
 
 export const ABOUT_TEXT = 'I am a motivated and adaptable software engineering undergraduate with a passion for developing intuitive and scalable web applications. Throughout my academic journey, I have gained hands-on experience with a range of technologies, including React, Next.js, Node.js, MySQL, and MongoDB. My interest in web development started with a fascination for building digital solutions, and it has grown into a commitment to mastering the craft. I enjoy working in team-oriented environments, where I can tackle complex challenges and contribute to innovative projects. Beyond my studies, I am eager to explore emerging technologies, collaborate on open-source initiatives, and continuously expand my skill set.';
 
 export const EXPERIENCES = [
-  {
+  {description: "I am currently seeking internship opportunities to apply my skills in a real-world setting and gain valuable industry experience. I am eager to contribute to projects that challenge me and allow me to grow as a developer."},
+  /*{
     year: "2023 - Present",
     role: "Senior Full Stack Developer",
     company: "Google Inc.",
@@ -35,16 +36,23 @@ export const EXPERIENCES = [
     company: "Paypal",
     description: `Contributed to the development of web applications using JavaScript, React.js, and Node.js. Managed databases and implemented data storage solutions using MongoDB. Worked closely with product managers to prioritize features and enhancements.`,
     technologies: ["Ruby", "Rails", "PHP", "Sqlite"],
-  },
+  },*/
 ];
 
 export const PROJECTS = [
   {
-    title: "Real-Time Chatting Website - Group project",
+    title: "Dambulla Dedicated Economic Center Smart System - Group project",
     image: project1,
     description:
-      "A fully functional Real-time chatting website with features like chat with other users, send images, audio & video call, hand signal identifier and text scanner.",
-    technologies: ["HTML", "CSS", "React", "Node.js", "firebase", "Django"],
+      "This project is an integrated web application designed to streamline the operations of the Dambulla Dedicated Economic Center. The system manages rent collection, sanitation scheduling, and vehicle ticketing processes, while providing administrators with an easy interface to enter and update daily product price lists categorized by product type. The platform enhances operational efficiency, improves data accuracy, and supports transparent market management.",
+    technologies: ["React", "NodeJS", "MySQL"],
+  },
+  {
+    title: "WaveTalk | Community Network  - Group project",
+    image: project4,
+    description:
+      "A fully functional Real-time chatting Appliction with features like chat with other users, send images, audio & video call, hand signal identifier and text scanner.",
+    technologies: ["HTML", "CSS", "React", "NodeJS", "firebase"],
   },
   {
     title: "BaniWorks - Local Freelancing Platform for Graphic designers and Content writers - Group project",
@@ -54,14 +62,14 @@ export const PROJECTS = [
     technologies: ["HTML", "CSS", "Typescript","Prisma", "Supabase"],
   },
   {
-    title: "Portfolio Website",
+    title: "Online Food Ordering System - Individual Project",
     image: project3,
     description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React", "Bootstrap"],
+      "A full-stack food ordering app built with the MERN stack. It features user authentication, a responsive React frontend styled with Tailwind CSS, Redux for state management, and a robust backend API. Users can browse menus, add items to a cart, and place orders securely. Optional payment gateway integration and admin management complete the system, providing a seamless ordering experience.",
+    technologies: ["MERN", "Tailwind CSS", "Redux", "BCrypt"],
   },
   {
-    title: "Blogging Platform",
+    title: "Blogging Platform - Individual Project",
     image: project4,
     description:
       "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
