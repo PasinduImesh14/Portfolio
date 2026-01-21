@@ -1,39 +1,80 @@
 import { PROJECTS } from "../constants";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
+  const container = useRef();
+
+  useGSAP(() => {
+    const projectCards = gsap.utils.toArray(".project-card");
+    projectCards.forEach((card) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+        y: 60,
+        opacity: 0,
+        scale: 0.95,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+      });
+    });
+  }, { scope: container });
+
   return (
-    <div className="border-b border-neutral-900 pb-4">
-      <motion.h2 
-      whileInView={{opacity: 1, y:0 }}
-      initial={{opacity: 0, y: -100}}
-      transition={{duration: 0.75}}
-      className="my-20 text-center text-3xl">Projects</motion.h2>  
-        <div>
-            {PROJECTS.map((project, index) => (
-            <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
-                <motion.div 
-                whileInView={{opacity: 1, x:0 }}
-                initial={{opacity: 0, x: -100}}
-                transition={{duration: 1}}
-                className="w-full lg:w-1/4">
-                <img src={project.image} width={150} height={150} alt={project.title} className="mb-6 rounded"/>
-            </motion.div>
-            <motion.div 
-            whileInView={{opacity: 1, x:0 }}
-            initial={{opacity: 0, x: 100}}
-            transition={{duration: 1}}
-            className="w-full max-w-xl lg:w-3/4">
-            <h6 className="mb-2 font-semibold">{project.title}</h6>
-            <p className="mb-4 text-neutral-400">{project.description}</p>
-           {project.technologies.map((tech, index) => (
-            <span key={index} className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-900">{tech}</span>
-           ))}
-            </motion.div>
+    <section 
+      ref={container} 
+      className="cassie-section bg-[var(--bg-projects)] text-[var(--text-main)] py-32 overflow-hidden px-8"
+    >
+      <h2 className="mb-24 text-center text-6xl lg:text-8xl font-display tracking-tighter">
+        Featured Work
+      </h2>
+      
+      <div className="max-w-6xl mx-auto space-y-20">
+        {PROJECTS.map((project, index) => (
+          <div 
+            key={index} 
+            className="project-card flex flex-wrap lg:items-center bg-[var(--card-bg)] p-8 lg:p-12 rounded-[50px] backdrop-blur-md border-2 border-[var(--border-color)] hover:bg-white/50 dark:hover:bg-white/10 transition-all duration-500 shadow-xl"
+          >
+            <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
+              <div className="overflow-hidden rounded-3xl shadow-2xl">
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full object-cover aspect-video hover:scale-110 transition-transform duration-700"
+                />
+              </div>
             </div>
+
+            <div className="w-full lg:w-2/3 lg:pl-16">
+              <h3 className="text-3xl lg:text-4xl font-display mb-6 leading-tight">
+                {project.title}
+              </h3>
+              <p className="opacity-80 mb-8 leading-relaxed font-medium text-lg">
+                {project.description}
+              </p>
+              
+              <div className="flex flex-wrap gap-3">
+                {project.technologies.map((tech, i) => (
+                  <span 
+                    key={i} 
+                    className="bg-black text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         ))}
-        </div>
-        </div>
+      </div>
+    </section>
   );
 };
 

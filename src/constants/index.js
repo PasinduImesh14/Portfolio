@@ -3,27 +3,27 @@ import project2 from "../assets/projects/project-2.jpg";
 import project3 from "../assets/projects/project-3.jpg";
 import project4 from "../assets/projects/project-4.jpg";
 
-export const HERO_CONTENT = "I am a dedicated undergraduate student pursuing a degree in software engineering, with a strong foundation in full-stack web development. I am passionate about using my growing expertise to develop scalable applications that provide seamless user experiences and contribute to meaningful solutions in the IT industry.";
+export const HERO_CONTENT = "My mission is to automate the boring stuff and build more of the awesome stuff.";
 
 export const ABOUT_TEXT = 'I am a motivated and adaptable software engineering undergraduate with a passion for developing intuitive and scalable web applications. Throughout my academic journey, I have gained hands-on experience with a range of technologies, including React, Next.js, Node.js, MySQL, and MongoDB. My interest in web development started with a fascination for building digital solutions, and it has grown into a commitment to mastering the craft. I enjoy working in team-oriented environments, where I can tackle complex challenges and contribute to innovative projects. Beyond my studies, I am eager to explore emerging technologies, collaborate on open-source initiatives, and continuously expand my skill set.';
 
 export const EXPERIENCES = [
-  {description: "I am currently seeking internship opportunities to apply my skills in a real-world setting and gain valuable industry experience. I am eager to contribute to projects that challenge me and allow me to grow as a developer."},
-  /*{
-    year: "2023 - Present",
-    role: "Senior Full Stack Developer",
-    company: "Google Inc.",
-    description: `Led a team in developing and maintaining web applications using JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases. Collaborated with stakeholders to define project requirements and timelines.`,
-    technologies: ["Javascript", "React.js", "Next.js", "mongoDB"],
+  //{description: "I am currently seeking internship opportunities to apply my skills in a real-world setting and gain valuable industry experience. I am eager to contribute to projects that challenge me and allow me to grow as a developer."},
+  {
+    year: "2025 July - 2026 January",
+    role: "Software Engineer Intern",
+    company: "Sri Lanka Telecom - Digital Platforms",
+    description: `Contributed to the development of Backend APIs using Node.js. Managed databases and implemented data storage solutions using MongoDB. Worked closely with product managers to prioritize features and enhancements. Collaborated with stakeholders to define project requirements and timelines.`,
+    technologies: ["Nodejs", "Reactjs", "mongoDB"],
   },
   {
-    year: "2022 - 2023",
+    year: "2026 January - Present",
     role: "Frontend Developer",
-    company: "Adobe",
+    company: "Pentarix (PVT) Ltd",
     description: `Designed and developed user interfaces for web applications using Next.js and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
-    technologies: ["HTML", "CSS", "Vue.js", "mySQL"],
+    technologies: ["HTML", "CSS", "Reactjs", "Nextjs"],
   },
-  {
+  /*{
     year: "2021 - 2022",
     role: "Full Stack Developer",
     company: "Facebook",

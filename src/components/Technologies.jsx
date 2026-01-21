@@ -1,73 +1,72 @@
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { RiReactjsLine } from "react-icons/ri";
 import { TbBrandNextjs } from "react-icons/tb";
 import { SiMongodb } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { DiRedis } from "react-icons/di";
-import { animate, motion } from "framer-motion";
 
-const iconVariants = (duration) => ({
-    initial: {y: -10},
-    animate:{
-       y: [10,-10] ,
-       transition: {
-        duration: duration,
-        ease: "linear",
-        repeat: Infinity,
-        repeatType: "reverse",
-       },
-    },
-});
+gsap.registerPlugin(ScrollTrigger);
 
 const Technologies = () => {
+  const container = useRef();
+
+  useGSAP(() => {
+    gsap.from(".tech-title", {
+      scrollTrigger: {
+        trigger: ".tech-title",
+        start: "top 90%",
+      },
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    });
+
+    gsap.to(".tech-icon", {
+      y: 20,
+      rotation: (i) => (i % 2 === 0 ? 5 : -5),
+      duration: 2.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      stagger: {
+        each: 0.2,
+        from: "random"
+      }
+    });
+  }, { scope: container });
+
+  const techStack = [
+    { Icon: RiReactjsLine, color: "text-cyan-400" },
+    { Icon: TbBrandNextjs, color: "" },
+    { Icon: SiMongodb, color: "text-green-500" },
+    { Icon: FaNodeJs, color: "text-green-500" },
+    { Icon: DiRedis, color: "text-red-700" },
+  ];
+
   return (
-    <div className="border-b border-neutral-800 pb-24 overflow-visible">
-        <motion.h2 
-        whileInView={{opacity: 1, y:0 }}
-        initial={{opacity: 0, y: -100}}
-        transition={{duration: 1.5}}
-        className="my-20 text-center text-3xl">Technologies</motion.h2>
-        <motion.div 
-        whileInView={{opacity: 1, x: 0}}
-        initial={{opacity: 0, x: -100}}
-        transition={{duration: 1.5}}
-        className="flex flex-wrap items-center justify-center gap-4">
-            <motion.div 
-            variants={iconVariants(2.5)}
-            initial="initial"
-            animate="animate"
-            className="rounded-2xl border-4 border-neutral-800 p-4">
-                <RiReactjsLine className="text-5xl text-cyan-400" />
-            </motion.div>
-            <motion.div 
-            variants={iconVariants(2.4)}
-            initial="initial"
-            animate="animate"
-            className="rounded-2xl border-4 border-neutral-800 p-4">
-                <TbBrandNextjs className="text-5xl" />
-            </motion.div>
-            <motion.div 
-            variants={iconVariants(2.3)}
-            initial="initial"
-            animate="animate"
-            className="rounded-2xl border-4 border-neutral-800 p-4">
-                <SiMongodb className="text-5xl text-green-500" />
-            </motion.div>
-            <motion.div 
-            variants={iconVariants(2.2)}
-            initial="initial"
-            animate="animate"
-            className="rounded-2xl border-4 border-neutral-800 p-4">
-                <FaNodeJs className="text-5xl text-green-500" />
-            </motion.div>
-            <motion.div 
-            variants={iconVariants(2.1)}
-            initial="initial"
-            animate="animate"
-            className="rounded-2xl border-4 border-neutral-800 p-4">
-                <DiRedis className="text-5xl text-red-700" />
-            </motion.div>
-        </motion.div>
-        </div>
+    <section 
+      ref={container} 
+      className="cassie-section bg-[var(--bg-tech)] text-[var(--text-main)] py-24 overflow-hidden"
+    >
+      <h2 className="tech-title mb-20 text-center text-5xl lg:text-6xl font-display">
+        Toolbox
+      </h2>
+      
+      <div className="flex flex-wrap items-center justify-center gap-8">
+        {techStack.map((tech, index) => (
+          <div 
+            key={index}
+            className="tech-icon bg-[var(--card-bg)] rounded-3xl border-2 border-[var(--border-color)] p-6 hover:bg-black/5 dark:hover:bg-white/10 transition-all duration-300 group"
+          >
+            <tech.Icon className={`text-6xl lg:text-7xl ${tech.color} group-hover:scale-110 transition-transform duration-300`} />
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

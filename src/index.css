@@ -1,9 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root{
-    font-family: "Inter", sans-serif;
+@font-face {
+  font-family: 'Mosk';
+  src: url('/fonts/Mosk Normal 400.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mosk';
+  src: url('/fonts/Mosk Bold 700.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mosk';
+  src: url('/fonts/Mosk Extra-Bold 800.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mosk';
+  src: url('/fonts/Mosk Ultra-Bold 900.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+:root {
+  /* Light Mode – Cohesive Neutral-Blue System */
+  --bg-hero: #F8FAFC;        /* Crisp white-blue */
+  --bg-hero-side: #E1E8F0;   /* Soft sky */
+  --bg-about: #CBD5E1;       /* Cool silver */
+  --bg-experience: #D4DFE8;  /* Light slate-blue */
+  --bg-tech: #A5B4CB;        /* Muted slate-blue */
+  --bg-projects: #8B9DC3;    /* Dusty periwinkle */
+  --bg-contact: #6B7FA8;     /* Deep steel-blue */
+
+  --text-main: #0F172A;      /* Deep navy */
+  --text-on-dark: #FFFFFF;
+
+  --card-bg: rgba(255, 255, 255, 0.65);
+  --border-color: rgba(15, 23, 42, 0.12);
+}
+
+[data-theme='dark'] {
+  /* Dark Mode – Inverted Blue-Charcoal Spectrum */
+  --bg-hero: #0A0E1A;        /* Deep space */
+  --bg-hero-side: #151B2E;   /* Dark navy */
+  --bg-about: #1E2A42;       /* Midnight blue */
+  --bg-experience: #273451;  /* Darker slate-blue */
+  --bg-tech: #2A3A58;        /* Slate navy */
+  --bg-projects: #3D4E6E;    /* Steel blue */
+  --bg-contact: #526A8A;     /* Muted azure */
+
+  --text-main: #E5E7EB;      /* Soft white */
+  --text-on-dark: #F9FAFB;
+
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.10);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-about);
+  color: var(--text-main);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3, p, .font-display {
+  font-family: 'Mosk', 'Playfair Display', serif;
+  font-weight: 900;
+}
+
+.cassie-section-split {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  min-height: 100vh;
+  display: flex;
+}
+.dark-mode-switch {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .dark-mode-switch {
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
+}
+
+/* Ensure navbar transitions are buttery smooth */
+nav {
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Optional: Add a little "pop" effect on hover */
+.relative:hover .z-10 {
+  transform: scale(1.05);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.animate-twinkle {
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+/* Custom delay utilities if not in your tailwind config */
+.delay-75 { animation-delay: 75ms; }
+.delay-150 { animation-delay: 150ms; }
+
+/* Refine the inner shadow for the track */
+.shadow-inner {
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .shadow-inner {
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* src/index.css */
+
+/* Base class for the outline effect */
+.outline-text {
+  color: transparent; /* Makes the fill invisible initially */
+  -webkit-text-stroke: 2px var(--text-main); /* Creates the border using your theme text color */
+  transition: color 0.3s ease, -webkit-text-stroke 0.3s ease;
+  cursor: default;
+}
+
+/* Hover state: Fill with color and remove stroke */
+.hover-fill:hover {
+  color: var(--text-main); /* Fills the text with the theme color */
+  -webkit-text-stroke: 0px transparent; /* Removes the stroke */
+}
+
+/* Adjust line-height for the large text block to prevent packing */
+.leading-relaxed {
+  line-height: 2.5rem; /* Adjust as needed for better readability */
 }

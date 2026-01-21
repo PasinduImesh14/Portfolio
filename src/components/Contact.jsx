@@ -1,28 +1,22 @@
 import { CONTACT } from "../constants";
-import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <div border-b border-neutral-900 pb-20>
-        <motion.h2 
-        whileInView={{opacity: 1, y:0 }}
-        initial={{opacity: 0, y: -100}}
-        transition={{duration: 0.75}}
-        className="my-10 text-center text-3xl">Contact <span className="text-neutral-500">Me</span></motion.h2>
-        <div className="text-center tracking-tighter">
-            <motion.p 
-            whileInView={{opacity: 1, x:0 }}
-            initial={{opacity: 0, x: -100}}
-            transition={{duration: 1}}
-            className="my-4">{CONTACT.address}</motion.p>
-            <motion.p 
-            whileInView={{opacity: 1, x:0 }}
-            initial={{opacity: 0, x: 100}}
-            transition={{duration: 1}}
-            className="my-4">{CONTACT.phoneNo}</motion.p>
-            <a href="#" className="border-b">{CONTACT.email}</a>
-        </div>
-        </div>
+    <section className="cassie-section bg-[var(--bg-contact)] py-32 text-[var(--text-main)] transition-colors duration-400">
+      <h2 className="mb-16 text-6xl text-center lg:text-8xl font-display">
+        Say Hello
+      </h2>
+      <div className="space-y-4 tracking-tighter text-center">
+        <p className="text-2xl font-medium">{CONTACT.address}</p>
+        <p className="text-2xl font-medium">{CONTACT.phoneNo}</p>
+        <a 
+          href={`mailto:${CONTACT.email}`} 
+          className="inline-block mt-8 text-3xl transition-all border-b-4 lg:text-2xl font-display border-black/20 hover:border-black"
+        >
+          {CONTACT.email}
+        </a>
+      </div>
+    </section>
   );
 };
 

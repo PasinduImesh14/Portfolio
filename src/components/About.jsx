@@ -1,38 +1,63 @@
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import working from "../assets/working.jpg";
 import { ABOUT_TEXT } from "../constants";
-import { motion } from "framer-motion";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  return (
-    <div className="border-b border-neutral-900 pb-4">
-        <motion.h2 
-        whileInView={{opacity: 1, y:0 }}
-        initial={{opacity: 0, y: -100}}
-        transition={{duration: 0.75}}
-        className="my-20 text-center text-3xl">About <span className="text-neutral-500">Me</span></motion.h2>
-        <div className="flex flex-wrap">
-            <motion.div 
-            whileInView={{opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100}}
-            transition={{duration:1}}
-            className="w-full lg:w-1/2 lg:p-8">
-                <div className="flex items-center justify-center">
-                    <img className="w-90 h-72 lg:w-90 lg:h-72 rounded-2xl" src={working} alt="About" />
+  const container = useRef();
 
-                </div>
-            </motion.div>
-            <motion.div 
-            whileInView={{opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 100}}
-            transition={{duration:1}}
-            className="w-full lg:w-1/2">
-                <div className="flex justify-center lg:justify-start">
-                    <p className="my-2 max-w-xl py-6 font-light tracking-tighter">
-                        {ABOUT_TEXT}
-                    </p>
-                </div>
-                </motion.div>
+  useGSAP(() => {
+    gsap.from(".about-title", {
+      scrollTrigger: {
+        trigger: ".about-title",
+        start: "top 90%",
+      },
+      y: -50,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    });
+
+    gsap.from(".about-animate", {
+      scrollTrigger: {
+        trigger: ".about-animate",
+        start: "top 80%",
+      },
+      x: (index) => index === 0 ? -100 : 100,
+      opacity: 0,
+      duration: 1.2,
+      stagger: 0.2,
+      ease: "power2.out"
+    });
+  }, { scope: container });
+
+  return (
+    <div ref={container} className="cassie-section bg-[var(--bg-about)] text-[var(--text-main)] pb-4">
+      <h2 className="my-20 text-5xl text-center about-title font-display">
+        About <span className="opacity-50">Me</span>
+      </h2>
+      <div className="flex flex-wrap">
+        <div className="w-full about-animate lg:w-1/2 lg:p-8">
+          <div className="flex items-center justify-center">
+            <img 
+              className="transition-all duration-500 w-90 h-72 rounded-2xl grayscale hover:grayscale-0" 
+              src={working} 
+              alt="About" 
+            />
+          </div>
         </div>
+        <div className="w-full about-animate lg:w-1/2">
+          <div className="flex justify-center lg:justify-start">
+            <p className="max-w-3xl py-6 my-2 text-lg font-light tracking-tighter lg:text-2xl">
+              {ABOUT_TEXT}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
