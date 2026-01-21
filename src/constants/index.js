@@ -14,14 +14,14 @@ export const EXPERIENCES = [
     role: "Software Engineer Intern",
     company: "Sri Lanka Telecom - Digital Platforms",
     description: `Contributed to the development of Backend APIs using Node.js. Managed databases and implemented data storage solutions using MongoDB. Worked closely with product managers to prioritize features and enhancements. Collaborated with stakeholders to define project requirements and timelines.`,
-    technologies: ["Nodejs", "Reactjs", "mongoDB"],
+    technologies: ["NodeJS", "ReactJS", "mongoDB"],
   },
   {
     year: "2026 January - Present",
     role: "Frontend Developer",
     company: "Pentarix (PVT) Ltd",
     description: `Designed and developed user interfaces for web applications using Next.js and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
-    technologies: ["HTML", "CSS", "Reactjs", "Nextjs"],
+    technologies: ["HTML", "CSS", "ReactJS", "NextJS"],
   },
   /*{
     year: "2021 - 2022",
@@ -45,7 +45,7 @@ export const PROJECTS = [
     image: project1,
     description:
       "This project is an integrated web application designed to streamline the operations of the Dambulla Dedicated Economic Center. The system manages rent collection, sanitation scheduling, and vehicle ticketing processes, while providing administrators with an easy interface to enter and update daily product price lists categorized by product type. The platform enhances operational efficiency, improves data accuracy, and supports transparent market management.",
-    technologies: ["React", "NodeJS", "MySQL"],
+    technologies: ["ReactJS" , "TailwindCSS" , "NodeJS", "ExpressJS" , "MySQL" , "AWS"],
   },
   {
     title: "WaveTalk | Community Network  - Group project",

@@ -52,7 +52,7 @@ const About = () => {
         </div>
         <div className="w-full about-animate lg:w-1/2">
           <div className="flex justify-center mt-6 lg:justify-start lg:mt-0">
-            <p className="max-w-xl px-4 py-6 my-2 text-sm font-light tracking-tighter sm:px-6 lg:px-0 sm:text-base lg:text-lg" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <p className="max-w-xl px-4 py-6 my-2 text-sm font-semibold tracking-tighter sm:px-6 lg:px-0 sm:text-base lg:text-lg" style={{ fontFamily: "'Poppins', sans-serif" }}>
               {ABOUT_TEXT}
             </p>
           </div>
