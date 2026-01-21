@@ -30,17 +30,17 @@ const Hero = () => {
       <div className="flex flex-wrap w-full">
         
         {/* TEXT SIDE */}
-        <div className="w-full lg:w-7/12 bg-[var(--bg-hero)] flex items-center px-8 lg:px-24 py-24 transition-colors duration-400">
+        <div className="w-full lg:w-7/12 bg-[var(--bg-hero)] flex items-center px-4 sm:px-6 lg:px-24 pt-24 sm:py-20 lg:py-24 pb-16 sm:pb-20 lg:pb-24 transition-colors duration-400">
           <div className="flex flex-col items-center lg:items-start text-[var(--text-main)]">
-            <h1 className="pb-8 text-4xl font-black leading-tight animate-name lg:text-5xl font-display">
+            <h1 className="pb-6 text-2xl font-black leading-tight sm:text-3xl lg:text-4xl animate-name font-display">
               Hello I&apos;m Pasindu
             </h1>
-            <span className="pl-4 mb-8 text-xl italic font-semibold border-l-4 animate-sub opacity-90 border-black/20">
+            <span className="pl-4 mb-6 text-base italic font-semibold border-l-4 sm:text-lg animate-sub opacity-90 border-black/20">
               Software Engineer/ Full Stack Developer...
             </span>
             
             {/* UPDATED HERO CONTENT WITH OUTLINE EFFECT */}
-            <div className="max-w-4xl text-6xl font-black leading-relaxed lg:text-7xl animate-p font-display">
+            <div className="max-w-4xl text-5xl font-black leading-relaxed hero-content sm:text-6xl lg:text-6xl animate-p font-display">
               <p>
                 My mission is to{" "}
                 <span className="outline-text hover-fill">automate</span> the{" "}
@@ -53,11 +53,11 @@ const Hero = () => {
         </div>
 
         {/* IMAGE SIDE */}
-        <div className="w-full lg:w-5/12 bg-[var(--bg-hero-side)] flex items-center justify-center px-8 py-24 transition-colors duration-400">
+        <div className="w-full lg:w-5/12 bg-[var(--bg-hero-side)] flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 lg:py-24 transition-colors duration-400">
           <div className="relative">
             <img 
               src={theme === "light" ? profilePicLight : profilePicDark} 
-              className="animate-img w-full max-w-[480px] lg:max-w-[600px] aspect-[4/5] rounded-[20px] border-8 border-white shadow-2xl object-cover hover:rotate-2 transition-transform duration-500"
+              className="animate-img w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] aspect-[4/5] rounded-[20px] border-4 sm:border-6 lg:border-8 border-white shadow-2xl object-cover hover:rotate-2 transition-transform duration-500"
               alt="Pasindu Fernando"
             />
           </div>

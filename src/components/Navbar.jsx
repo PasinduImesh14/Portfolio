@@ -22,14 +22,14 @@ const Navbar = () => {
   const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-4 px-8 bg-[var(--bg-hero)] transition-colors duration-400 border-b border-[var(--border-color)]">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-3 px-4 sm:px-6 lg:px-8 bg-[var(--bg-hero)] transition-colors duration-400 border-b border-[var(--border-color)]">
       <div className="flex items-center">
-        <img className="w-auto h-10" src={logo} alt="logo" />
+        <img className="w-auto h-7 sm:h-8 lg:h-10" src={logo} alt="logo" />
       </div>
       
-      <div className="flex items-center gap-8 text-[var(--text-main)]">
+      <div className="flex items-center gap-4 sm:gap-6 lg:gap-8 text-[var(--text-main)]">
         {/* Social Icons */}
-        <div className="flex gap-8 text-4xl">
+        <div className="flex gap-4 text-2xl sm:gap-6 lg:gap-8 sm:text-3xl lg:text-4xl">
           <a href="https://github.com/PasinduImesh14" target="_blank" rel="noreferrer" className="transition-all hover:scale-110 hover:text-[#6E40C9]"><FaGithub /></a>
           <a href="https://www.linkedin.com/in/pasindu-imesh-ba001724b" target="_blank" rel="noreferrer" className="transition-all hover:scale-110 hover:text-[#0A66C2]"><FaLinkedin /></a>
           <a href="https://www.instagram.com/_pasiya.a" target="_blank" rel="noreferrer" className="transition-all hover:scale-110 hover:text-[#E4405F]"><FaInstagram /></a>

@@ -30,33 +30,33 @@ const Experience = () => {
       ref={container} 
       className="cassie-section bg-[var(--bg-experience)] text-[var(--text-main)] py-32 overflow-hidden"
     >
-      <h2 className="mb-20 text-6xl tracking-tighter text-center lg:text-8xl font-display">
+      <h2 className="mb-12 sm:mb-16 lg:mb-20 text-3xl sm:text-4xl lg:text-5xl tracking-tighter text-center font-display">
         Experience
       </h2>
       
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {EXPERIENCES.map((experience, index) => (
           <div 
             key={index} 
-            className="experience-item mb-12 flex flex-wrap lg:justify-center bg-[var(--card-bg)] p-8 rounded-[40px] backdrop-blur-sm border-2 border-[var(--border-color)] shadow-lg"
+            className="experience-item mb-8 sm:mb-10 lg:mb-12 flex flex-col lg:flex-row lg:justify-center bg-[var(--card-bg)] p-6 sm:p-8 rounded-3xl lg:rounded-[40px] backdrop-blur-sm border-2 border-[var(--border-color)] shadow-lg"
           >
             <div className="w-full mb-4 lg:w-1/4 lg:mb-0">
-              <p className="text-sm font-bold tracking-widest uppercase opacity-60">
+              <p className="text-xs sm:text-sm font-bold tracking-widest uppercase opacity-60">
                 {experience.year || "Current"}
               </p>
             </div>
 
             <div className="w-full lg:w-3/4 lg:pl-10">
-              <h6 className="mb-3 text-2xl leading-tight font-display">
+              <h6 className="mb-2 sm:mb-3 text-lg sm:text-xl lg:text-2xl leading-tight font-display">
                 {experience.role ? `${experience.role} ` : ""}
                 {experience.company && (
-                  <span className="text-xl italic opacity-70">
+                  <span className="text-base sm:text-lg lg:text-xl italic opacity-70">
                     @ {experience.company}
                   </span>
                 )}
               </h6>
               
-              <p className="mb-6 font-medium leading-relaxed opacity-80">
+              <p className="mb-4 sm:mb-6 font-medium leading-relaxed opacity-80 text-sm sm:text-base">
                 {experience.description}
               </p>
 
@@ -64,7 +64,7 @@ const Experience = () => {
                 {experience.technologies?.map((tech, techIndex) => (
                   <span 
                     key={techIndex} 
-                    className="px-4 py-1 text-xs font-bold tracking-tighter text-white uppercase bg-black rounded-full"
+                    className="px-3 sm:px-4 py-1 text-xs font-bold tracking-tighter text-white uppercase bg-black rounded-full"
                   >
                     {tech}
                   </span>
